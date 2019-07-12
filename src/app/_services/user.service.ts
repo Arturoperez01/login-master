@@ -31,7 +31,7 @@ export class UserService {
     }
 
     update(user: User) {
-        return this.http.put(`${this.contextUrl}/` + user._id, user)
+        return this.http.post(`${this.contextUrl}/` + user._id, user)
         .pipe(map(data => data));
     }
 
@@ -41,7 +41,7 @@ export class UserService {
     }
 
     changePassword(...params: any[] ): Observable<any> {
-        return this.http.put(`${this.contextUrl}/{id}/changePassword`, {})
+        return this.http.post(`${this.contextUrl}/{id}/changePassword`, {})
         .pipe(
             map(response => response)
         );

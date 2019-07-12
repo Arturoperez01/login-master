@@ -8,7 +8,7 @@ import { SHA3 } from 'sha3';
 import { SecurityService } from '../services/security.service';
 import { AuthenticationService } from '../authentication.service';
 import { User } from '../../_models/user/';
-import { UserService } from '../../_services/user.service';
+import { AlertService, UserService } from '../../_services/';
 import { store } from '../current-user';
 
 /**
@@ -28,6 +28,7 @@ export class ProfileComponent implements OnInit {
     @ViewChild('closeModal') closeModal: ElementRef;
 
     constructor(
+        private alertService: AlertService,
         private userService: UserService,
         private authenticationService: AuthenticationService,
         private securityService: SecurityService,
@@ -52,7 +53,9 @@ export class ProfileComponent implements OnInit {
             this.userService.update(this.user).subscribe(data => {
                 this.userService.getById(this.user._id).subscribe(user => {
                     store.setUser(user);
+                    this.alertService.success("Se modificaron los datos exitosamente",true);
                     this.router.navigateByUrl('/home');
+
                 });
             });
     }

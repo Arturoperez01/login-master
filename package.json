@@ -2,8 +2,8 @@
   "name": "login",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",   
-    "install": "npm install && cd ../server && npm install", 
+    "ng": "ng",
+    "install": " cd server && npm install",
     "start": "concurrently --raw \"cd server && npm start\" \" ng build --watch\" ",
     "build": "ng build",
     "test": "ng test",

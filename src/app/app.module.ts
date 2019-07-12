@@ -9,11 +9,13 @@ import { CoreModule } from './core.module'
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AlertComponent } from './_directives'
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    AlertComponent
   ],
   imports: [
     AppRoutingModule,
@@ -24,6 +26,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     FormsModule,
     MDBBootstrapModule.forRoot()
   ],
+  exports: [AlertComponent],
   providers: [],
   bootstrap: [AppComponent]
 })
