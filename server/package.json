@@ -21,7 +21,7 @@
     "extend": "^3.0.1",
     "helmet": "^3.16.0",
     "jsonwebtoken": "^7.4.3",
-    "mongoose": "^5.5.0",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.11.0",
     "swagger-ui-express": "^2.0.15",
     "tracer": "^0.8.9",
